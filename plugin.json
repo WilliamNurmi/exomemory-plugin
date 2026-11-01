@@ -1,0 +1,107 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "exomem",
+  "version": "0.1.0",
+  "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
+  "author": {
+    "name": "Gevolut Oy"
+  },
+  "homepage": "https://exomem.io",
+  "keywords": [
+    "personal memory",
+    "memory archive",
+    "second brain",
+    "chat history search",
+    "notes search",
+    "voice memos",
+    "Obsidian",
+    "Messenger export",
+    "self-hosted",
+    "local-first"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/exomem-setup/SKILL.md",
+      "interface": {
+        "displayName": "Exomem",
+        "shortDescription": "Search your own memories",
+        "longDescription": "Exomem lets ChatGPT search your own memory archive: chat histories, notes and voice-memo transcripts that you export from the services you use and import into Exomem on your own computer. Ask what you decided, who said what, or what you wrote about a topic, and get answers with dated excerpts and links to the original records.\n\nYour archive stays on your computer. Exomem connects it to ChatGPT through exomem.io, which signs you in and forwards each question to your computer and the answer back without storing it. You choose which sources are reachable; anything marked local-only stays hidden.\n\nUntil you set up your own Exomem, the app shows a demo workspace with synthetic memories of an invented person, and every answer says so. The setup guide walks you through installing Exomem, requesting exports and importing them.\n\nThe tools only read your archive. The one exception is an optional feedback note about the Exomem service itself, which never contains memory content.",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://exomem.io",
+        "supportURL": "https://exomem.io/support",
+        "privacyPolicyURL": "https://exomem.io/privacy",
+        "termsOfServiceURL": "https://exomem.io/terms",
+        "defaultPrompt": [
+          "What did we decide about the trip, and who is coming?",
+          "Find what I wrote about this project's key decisions, with dates.",
+          "What have Priya and I talked about recently?"
+        ],
+        "brandColor": "#1E2B45",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png",
+        "developerName": "Gevolut Oy"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Answer a trip question from chats and notes",
+              "prompt": "What did we end up deciding for the Lisbon trip: the dates, where we stayed and which flight we took?",
+              "tools_triggered": "capabilities, search, get",
+              "expected_behavior": "Searches the archive and answers from the Lisbon note and the group chat: 10 to 14 April 2026, a flat in Príncipe Real, and the SAS 11:40 flight from Copenhagen rather than the 07:05 TAP option. Cites dated excerpts and states that the results come from the synthetic demo workspace."
+            },
+            {
+              "description": "Combine a note, a voice memo and a chat",
+              "prompt": "What hydration do I use for sourdough now, and why did I change it?",
+              "tools_triggered": "search, get",
+              "expected_behavior": "Answers that the house recipe since April 2026 is 75% hydration with 10% whole wheat, because the 80% loaves kept spreading flat in the oven. Cites the sourdough log and the 2 April 2026 voice memo (and may cite the chat with Priya), with dates."
+            },
+            {
+              "description": "Find a person and summarise shared history",
+              "prompt": "Who is Priya Natarajan, and what have we talked about this spring?",
+              "tools_triggered": "resolve_person, search",
+              "expected_behavior": "Identifies Priya as the London-based book-club organiser. Summarises the Walden discussion, the next pick (The Overstory), the Lisbon trip and the sourdough starter she asked for in May 2026, each with a date and source."
+            },
+            {
+              "description": "List dated project decisions",
+              "prompt": "List the decisions we made on Project Kestrel, with their dates.",
+              "tools_triggered": "search, get",
+              "expected_behavior": "Lists the decisions from the Project Kestrel note in date order: 19 January 2026 move from the nightly import to a Postgres-backed event queue; 11 February idempotent retries through a unique event id; 2 March launch on 22 April with a feature freeze on 1 April; 20 April a dead letter queue alert and an event-age indicator. May add that it went live on 22 April 2026."
+            },
+            {
+              "description": "Explain the service and the demo workspace",
+              "prompt": "What is Exomem, and how would I set it up with my own chats and notes?",
+              "tools_triggered": "about",
+              "expected_behavior": "Explains that Exomem is a personal memory archive that runs on the user's own computer and is reached through exomem.io, that this connection currently shows a demo workspace with synthetic memories, and points to https://exomem.io/setup for installing it and importing exports. Does not present demo memories as the user's own data."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Request to delete memories",
+              "prompt": "Delete my notes about the Lisbon trip.",
+              "expected_behavior": "Explains that Exomem's tools only read the archive and cannot delete anything; the notes would have to be removed in the original app and re-imported. Does not claim that anything was deleted."
+            },
+            {
+              "description": "Source that is not in the archive",
+              "prompt": "What did Maya send me on WhatsApp yesterday?",
+              "tools_triggered": "capabilities",
+              "expected_behavior": "Reports that the archive has no WhatsApp source (it holds Messenger chats, notes and voice memos) and offers to search the Messenger chats with Maya instead. Does not invent messages."
+            },
+            {
+              "description": "Live information unrelated to personal memory",
+              "prompt": "What's the weather going to be in Lisbon this weekend?",
+              "expected_behavior": "Does not use Exomem tools, since Exomem holds personal records rather than live data; answers from other available means or says it cannot check the forecast."
+            }
+          ]
+        },
+        "commerce": false
+      },
+      "publication": {
+        "release_notes": "First release: search, read and browse your self-hosted Exomem archive of chats, notes and voice memos, with dated excerpts and source links; a demo workspace with synthetic memories until you connect your own; and a setup guide for installing Exomem and importing exports."
+      }
+    }
+  }
+}

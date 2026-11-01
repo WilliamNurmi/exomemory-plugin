@@ -1,0 +1,28 @@
+{
+  "name": "exomem",
+  "displayName": "Exomem",
+  "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
+  "author": {
+    "name": "Gevolut Oy",
+    "email": "hello@exomem.io",
+    "url": "https://exomem.io"
+  },
+  "homepage": "https://exomem.io",
+  "repository": "https://github.com/WilliamNurmi/exomem-plugin",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "personal archive",
+    "notes",
+    "chat history",
+    "self-hosted"
+  ],
+  "documentationUrl": "https://exomem.io/docs",
+  "supportUrl": "https://exomem.io/support",
+  "privacyPolicyUrl": "https://exomem.io/privacy",
+  "termsOfServiceUrl": "https://exomem.io/terms",
+  "icon": "./assets/icon.png",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "version": "0.1.0"
+}

@@ -1,0 +1,7 @@
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "exomem"
+      description: "Search and read the user's self-hosted Exomem memory archive through exomem.io."
+      transport: "streamable_http"
+      url: "https://mcp.exomem.io/mcp"
