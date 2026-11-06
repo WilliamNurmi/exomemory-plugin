@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "exomem": {
+    "exomemory": {
       "type": "http",
       "url": "https://mcp.exomem.io/mcp"
     }

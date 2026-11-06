@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "exomem",
-  "version": "0.1.0",
+  "name": "exomemory",
+  "version": "0.1.1",
   "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
   "author": {
     "name": "Gevolut Oy"
@@ -21,11 +21,11 @@
   ],
   "extensions": {
     "com.openai": {
-      "onboardingSkill": "./skills/exomem-setup/SKILL.md",
+      "onboardingSkill": "./skills/setup/SKILL.md",
       "interface": {
-        "displayName": "Exomem",
+        "displayName": "Exomemory",
         "shortDescription": "Search your own memories",
-        "longDescription": "Exomem lets ChatGPT search your own memory archive: chat histories, notes and voice-memo transcripts that you export from the services you use and import into Exomem on your own computer. Ask what you decided, who said what, or what you wrote about a topic, and get answers with dated excerpts and links to the original records.\n\nYour archive stays on your computer. Exomem connects it to ChatGPT through exomem.io, which signs you in and forwards each question to your computer and the answer back without storing it. You choose which sources are reachable; anything marked local-only stays hidden.\n\nUntil you set up your own Exomem, the app shows a demo workspace with synthetic memories of an invented person, and every answer says so. The setup guide walks you through installing Exomem, requesting exports and importing them.\n\nThe tools only read your archive. The one exception is an optional feedback note about the Exomem service itself, which never contains memory content.",
+        "longDescription": "Exomemory lets ChatGPT search your own memory archive: chat histories, notes and voice-memo transcripts that you export from the services you use and import into Exomem on your own computer. Ask what you decided, who said what, or what you wrote about a topic, and get answers with dated excerpts and links to the original records.\n\nYour archive stays on your computer. Exomemory connects it to ChatGPT through exomem.io, which signs you in and forwards each question to your computer and the answer back without storing it. You choose which sources are reachable; anything marked local-only stays hidden.\n\nUntil you set up your own Exomem, the app shows a demo workspace with synthetic memories of an invented person, and every answer says so. The setup guide walks you through installing Exomem, requesting exports and importing them.\n\nThe tools only read your archive. The one exception is an optional feedback note about the Exomemory service itself, which never contains memory content.",
         "category": "Productivity",
         "capabilities": [
           "Read"
@@ -73,9 +73,9 @@
             },
             {
               "description": "Explain the service and the demo workspace",
-              "prompt": "What is Exomem, and how would I set it up with my own chats and notes?",
+              "prompt": "What is Exomemory, and how would I set it up with my own chats and notes?",
               "tools_triggered": "about",
-              "expected_behavior": "Explains that Exomem is a personal memory archive that runs on the user's own computer and is reached through exomem.io, that this connection currently shows a demo workspace with synthetic memories, and points to https://exomem.io/setup for installing it and importing exports. Does not present demo memories as the user's own data."
+              "expected_behavior": "Explains that Exomemory connects ChatGPT to Exomem, a personal memory archive that runs on the user's own computer and is reached through exomem.io, that this connection currently shows a demo workspace with synthetic memories, and points to https://exomem.io/setup for installing it and importing exports. Does not present demo memories as the user's own data."
             }
           ],
           "negative": [

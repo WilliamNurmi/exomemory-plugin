@@ -1,18 +1,18 @@
 {
-  "name": "exomem",
+  "name": "exomemory",
   "owner": {
     "name": "Gevolut Oy",
     "email": "hello@exomem.io"
   },
   "metadata": {
-    "description": "The Exomem plugin: search your own self-hosted memory archive."
+    "description": "The Exomemory plugin: search your own self-hosted Exomem memory archive."
   },
   "plugins": [
     {
-      "name": "exomem",
+      "name": "exomemory",
       "source": "./",
       "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

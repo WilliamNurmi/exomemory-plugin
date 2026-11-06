@@ -1,5 +1,5 @@
 ---
-name: exomem
+name: exomemory
 description: Search and read the user's own Exomem memory archive (their chats, notes and voice memos) with the Exomem tools. Use when the user asks about something they said, wrote, planned or discussed before, wants dated evidence from their own records, or asks what their Exomem contains.
 ---
 

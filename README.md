@@ -1,6 +1,6 @@
-# Exomem plugin
+# Exomemory plugin
 
-Exomem lets ChatGPT, Codex, Claude and Claude Code search your own memory
+Exomemory lets ChatGPT, Codex, Claude and Claude Code search your own memory
 archive: chat histories, notes and voice-memo transcripts that you export from
 the services you use and import into Exomem on your own computer. Answers come
 with dated excerpts and links to the original records.
@@ -12,8 +12,8 @@ This repository is generated from the Exomem source repository
 
 | Path | Purpose |
 | --- | --- |
-| `skills/exomem/` | How to search and cite the archive well |
-| `skills/exomem-setup/` | Guided setup: install Exomem, request exports, import them, connect assistants |
+| `skills/exomemory/` | How to search and cite the archive well |
+| `skills/setup/` | Guided setup: install Exomem, request exports, import them, connect assistants |
 | `.claude-plugin/plugin.json`, `.mcp.json` | Claude plugin manifest and its one MCP server |
 | `.claude-plugin/marketplace.json` | Lets Claude Code install the plugin straight from this repository |
 | `plugin.json`, `mcp.json` | OpenAI (ChatGPT and Codex) plugin manifest and its one MCP server |
@@ -44,10 +44,10 @@ This repository is generated from the Exomem source repository
 
 ## Install
 
-- Claude Code: `/plugin install exomem --marketplace WilliamNurmi/exomem-plugin`
+- Claude Code: `/plugin install exomemory --marketplace WilliamNurmi/exomem-plugin`
   (this repository is its own one-plugin marketplace), or install it from the
   Claude directory once listed.
-- ChatGPT and Codex: install Exomem from the plugin directory once listed.
+- ChatGPT and Codex: install Exomemory from the plugin directory once listed.
 - Any MCP client: connect `https://mcp.exomem.io/mcp` directly.
 
 Set up your own Exomem: https://exomem.io/setup · Privacy: https://exomem.io/privacy ·

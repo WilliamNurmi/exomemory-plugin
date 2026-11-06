@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
-    "exomem": {
+    "exomemory": {
       "type": "streamable-http",
       "url": "https://mcp.exomem.io/mcp",
       "extensions": {

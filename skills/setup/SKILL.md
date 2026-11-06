@@ -1,5 +1,5 @@
 ---
-name: exomem-setup
+name: setup
 description: Set up a self-hosted Exomem on the user's computer, import exports of their chats, notes and voice memos, and connect it to ChatGPT, Claude, Claude Code or Codex. Use when the user wants to install Exomem, add a new source to it, or connect it to an assistant.
 ---
 
