@@ -44,7 +44,7 @@ This repository is generated from the Exomem source repository
 
 ## Install
 
-- Claude Code: `/plugin install exomemory --marketplace WilliamNurmi/exomem-plugin`
+- Claude Code: `/plugin install exomemory --marketplace WilliamNurmi/exomemory-plugin`
   (this repository is its own one-plugin marketplace), or install it from the
   Claude directory once listed.
 - ChatGPT and Codex: install Exomemory from the plugin directory once listed.

@@ -12,7 +12,7 @@
       "name": "exomemory",
       "source": "./",
       "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
-      "version": "0.1.2"
+      "version": "0.1.3"
     }
   ]
 }
