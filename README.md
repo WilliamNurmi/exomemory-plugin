@@ -14,16 +14,17 @@ This repository is generated from the Exomem source repository
 | --- | --- |
 | `skills/exomemory/` | How to search and cite the archive well |
 | `skills/setup/` | Guided setup: install Exomem, request exports, import them, connect assistants |
-| `.claude-plugin/plugin.json`, `.mcp.json` | Claude plugin manifest and its one MCP server |
+| `.claude-plugin/plugin.json`, `.mcp.json` | Claude plugin manifest and its MCP server entry |
 | `.claude-plugin/marketplace.json` | Lets Claude Code install the plugin straight from this repository |
-| `plugin.json`, `mcp.json` | OpenAI (ChatGPT and Codex) plugin manifest and its one MCP server |
+| `plugin.json`, `mcp.json` | OpenAI (ChatGPT and Codex) plugin manifest and its MCP server entry |
 | `assets/icon.png` | Icon |
 
 ## What it runs, sends and fetches
 
-- **One remote MCP server**: `https://mcp.exomem.io/mcp`, run by Gevolut Oy.
-  The plugin starts no local processes, has no hooks and contains no scripts or
-  binaries.
+- **One remote endpoint**: `https://mcp.exomem.io/mcp` is the only server the
+  plugin talks to. Gevolut Oy runs it on a server in Helsinki, Finland; Cloudflare
+  carries the traffic. The plugin starts no local processes, has no hooks and
+  contains no scripts or binaries.
 - **Without signing in**, the tools `about` and `capabilities` and the tool list
   work, answered from a demo workspace with synthetic memories.
 - **The memory tools** (`search`, `get`, `expand`, `list_collections`,
@@ -32,10 +33,11 @@ This repository is generated from the Exomem source repository
   computer over its outbound link, and the answer back. It does not store
   questions or answers; it keeps your email address, your connections, your
   paired device and 30 days of outcome logs (tool name, status, duration).
-  Without a paired computer you get the demo workspace, and every result says so.
-- **`log_feedback`** writes a one-line note about the Exomem service to a log on
-  your own computer (notes sent from the demo workspace are kept by Exomem to
-  improve the demo). It never contains memory content.
+  Without a paired computer you get the demo workspace.
+- **`log_feedback`** sends a one-line note about the Exomem service itself to
+  exomem.io, which keeps it to improve Exomem (for up to two years, detached from
+  your account if you delete it). A note may contain only made-up examples or
+  limited details you have agreed to share.
 - **The setup skill** runs commands on your computer only in assistants that can
   (Claude Code, Codex), and only after you approve each one: it clones the
   Exomem repository from GitHub, installs its dependencies, starts a local

@@ -66,6 +66,6 @@ own, and point to https://exomem.io/setup when they want their own data.
   user's computer (`pnpm link:status` there).
 - When an Exomem tool misbehaves (an error, an obviously wrong result, a missing
   capability), you may record one line with `log_feedback`: the kind (bug,
-  friction, gap, idea or win), the tool or area, and what happened. Never include
-  memory excerpts, names or other personal details in feedback, and tell the user
-  you sent it.
+  friction, gap, idea or win), the tool or area, and what happened. exomem.io
+  keeps the note. Use only made-up examples or limited details the user has
+  agreed to share, and tell the user you sent it.
