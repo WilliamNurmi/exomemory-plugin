@@ -1,7 +1,7 @@
 {
   "name": "exomemory",
   "displayName": "Exomemory",
-  "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
+  "description": "Let your assistant draw on your messages, notes and voice memos across platforms: past decisions, recommendations and ideas, with dated excerpts and source links.",
   "author": {
     "name": "Gevolut Oy",
     "email": "hello@exomem.io",
@@ -11,10 +11,18 @@
   "repository": "https://github.com/WilliamNurmi/exomemory-plugin",
   "license": "MIT",
   "keywords": [
-    "memory",
-    "personal archive",
-    "notes",
-    "chat history",
+    "second brain",
+    "personal knowledge base",
+    "message history search",
+    "notes search",
+    "voice memos",
+    "WhatsApp",
+    "Messenger",
+    "iMessage",
+    "Telegram",
+    "Obsidian",
+    "Notion",
+    "Apple Notes",
     "self-hosted"
   ],
   "documentationUrl": "https://exomem.io/docs",
@@ -24,5 +32,5 @@
   "icon": "./assets/icon.png",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
-  "version": "0.1.4"
+  "version": "0.1.5"
 }

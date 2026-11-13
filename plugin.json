@@ -1,21 +1,26 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "exomemory",
-  "version": "0.1.4",
-  "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
+  "version": "0.1.5",
+  "description": "Let your assistant draw on your messages, notes and voice memos across platforms: past decisions, recommendations and ideas, with dated excerpts and source links.",
   "author": {
     "name": "Gevolut Oy"
   },
   "homepage": "https://exomem.io",
   "keywords": [
-    "personal memory",
-    "memory archive",
+    "personal knowledge base",
+    "message history",
     "second brain",
     "chat history search",
     "notes search",
-    "voice memos",
-    "Obsidian",
-    "Messenger export",
+    "voice memo search",
+    "WhatsApp chat history",
+    "Messenger chat history",
+    "iMessage history",
+    "Telegram chat history",
+    "Obsidian notes",
+    "Notion notes",
+    "Apple Notes",
     "self-hosted",
     "local-first"
   ],
@@ -24,8 +29,8 @@
       "onboardingSkill": "./skills/setup/SKILL.md",
       "interface": {
         "displayName": "Exomemory",
-        "shortDescription": "Search your own memories",
-        "longDescription": "Exomemory lets ChatGPT search your own memory archive: chat histories, notes and voice-memo transcripts that you export from the services you use and import into Exomem on your own computer. Ask what you decided, who said what, or what you wrote about a topic, and get answers with dated excerpts and links to the original records.\n\nYour archive stays on your computer. Exomemory connects it to ChatGPT through exomem.io, which signs you in and forwards each question to your computer and the answer back without storing it. You choose which sources are reachable; anything marked local-only stays hidden.\n\nUntil you set up your own Exomem, the app shows a demo workspace with synthetic memories of an invented person. The setup guide walks you through installing Exomem, requesting exports and importing them.\n\nThe tools only read your archive. The one exception is an optional feedback note about the Exomemory service itself, which exomem.io keeps to improve Exomem; it may contain only made-up examples or limited details you have agreed to share.",
+        "shortDescription": "Your life's context, on call",
+        "longDescription": "Exomemory lets ChatGPT draw on your life context and history: past messages, ideas and decisions from your WhatsApp, Messenger, iMessage and Telegram chats, your Obsidian, Notion and Apple Notes, and your voice memos. With that background it can work like an executive assistant who has been with you for years: brief you before a meeting, build a timeline of how something came about, or find who recommended what and when. Ask by topic, person or date, without worrying about exact wording, and let ChatGPT sift through the records, find what is relevant and quote it with dates and links to the originals.\n\nYou keep your data in your own hands: the archive lives on your computer. Exomemory connects ChatGPT to it through a relay that forwards each question to your computer and the answer back without storing either. Alternatively, assistants that run on your computer, such as Codex, can connect to your Exomem directly as a custom MCP server, without the relay.\n\nUntil you set up your own Exomem, the app shows a demo workspace with synthetic memories. The setup guide walks you through installing Exomem and adding your messages, notes and voice memos.\n\nThe tools are read-only, except when you choose to send optional feedback about the service itself.",
         "category": "Productivity",
         "capabilities": [
           "Read"
@@ -35,9 +40,9 @@
         "privacyPolicyURL": "https://exomem.io/privacy",
         "termsOfServiceURL": "https://exomem.io/terms",
         "defaultPrompt": [
-          "What did we decide about the trip, and who is coming?",
-          "Find what I wrote about this project's key decisions, with dates.",
-          "What have Priya and I talked about recently?"
+          "I'm planning the Porto trip with Maya. Brief me on what we've agreed so far.",
+          "Build a timeline of the key decisions on Project Kestrel, with links to the original notes.",
+          "Find the voice memo where I explained why I changed my sourdough recipe."
         ],
         "brandColor": "#1E2B45",
         "composerIcon": "./assets/icon.png",
@@ -57,19 +62,19 @@
               "description": "Combine a note, a voice memo and a chat",
               "prompt": "What hydration do I use for sourdough now, and why did I change it?",
               "tools_triggered": "search, get",
-              "expected_behavior": "Answers that the house recipe since April 2026 is 75% hydration with 10% whole wheat, because the 80% loaves kept spreading flat in the oven. Cites the sourdough log and the 2 April 2026 voice memo (and may cite the chat with Priya), with dates."
+              "expected_behavior": "Answers that the house recipe since April 2026 is 75% hydration with 10% whole wheat, because the 80% loaves kept spreading flat in the oven. Cites the sourdough log with dates, and may also cite the 2 April 2026 voice memo and the chat with Priya."
             },
             {
               "description": "Find a person and summarise shared history",
               "prompt": "Who is Priya Natarajan, and what have we talked about this spring?",
               "tools_triggered": "resolve_person, search",
-              "expected_behavior": "Identifies Priya as the London-based book-club organiser. Summarises the Walden discussion, the next pick (The Overstory), the Lisbon trip and the sourdough starter she asked for in May 2026, each with a date and source."
+              "expected_behavior": "Identifies Priya as a friend from the book club, which she organises from London. Summarises the Walden discussion, the next pick (The Overstory), the Lisbon trip and the sourdough starter she asked for at the end of April 2026, each with a date and source."
             },
             {
               "description": "List dated project decisions",
               "prompt": "List the decisions we made on Project Kestrel, with their dates.",
               "tools_triggered": "search, get",
-              "expected_behavior": "Lists the decisions from the Project Kestrel note in date order: 19 January 2026 move from the nightly import to a Postgres-backed event queue; 11 February idempotent retries through a unique event id; 2 March launch on 22 April with a feature freeze on 1 April; 20 April a dead letter queue alert and an event-age indicator. May add that it went live on 22 April 2026."
+              "expected_behavior": "Lists the decisions from the Project Kestrel note in date order: 19 January 2026 move from the nightly import to a Postgres-backed event queue; 11 February idempotent retries through a unique event id; 2 March launch on 22 April with a feature freeze on 1 April; 20 April a dead letter queue alert and an event-age indicator. May add the 28 April retrospective action and that it went live on 22 April 2026."
             },
             {
               "description": "Explain the service and the demo workspace",
@@ -82,25 +87,25 @@
             {
               "description": "Request to delete memories",
               "prompt": "Delete my notes about the Lisbon trip.",
-              "expected_behavior": "Explains that Exomem's tools only read the archive and cannot delete anything; the notes would have to be removed in the original app and re-imported. Does not claim that anything was deleted."
+              "expected_behavior": "Explains that Exomem's tools only read the archive and cannot delete anything; the notes would have to be removed in the original app and re-imported. Does not claim that anything was deleted from Exomem. ChatGPT may separately update its own memory or preferences; that is a ChatGPT feature, not an Exomem tool."
             },
             {
-              "description": "Source that is not in the archive",
+              "description": "Nothing in the archive for the asked period",
               "prompt": "What did Maya send me on WhatsApp yesterday?",
-              "tools_triggered": "capabilities",
-              "expected_behavior": "Reports that the archive has no WhatsApp source (it holds Messenger chats, notes and voice memos) and offers to search the Messenger chats with Maya instead. Does not invent messages."
+              "tools_triggered": "capabilities, search, list_records",
+              "expected_behavior": "Looks in the WhatsApp chats and reports that Maya sent nothing yesterday: the demo workspace's WhatsApp history ends in July 2026. May mention her latest WhatsApp messages (the Porto planning group) with their dates. Does not invent messages."
             },
             {
               "description": "Live information unrelated to personal memory",
               "prompt": "What's the weather going to be in Lisbon this weekend?",
-              "expected_behavior": "Does not use Exomem tools, since Exomem holds personal records rather than live data; answers from other available means or says it cannot check the forecast."
+              "expected_behavior": "Does not search the archive, since Exomem holds personal records rather than live data (it may first check what Exomem offers with capabilities); answers from other available means or says it cannot check the forecast."
             }
           ]
         },
         "commerce": false
       },
       "publication": {
-        "release_notes": "First release: search, read and browse your self-hosted Exomem archive of chats, notes and voice memos, with dated excerpts and source links; a demo workspace with synthetic memories until you connect your own; and a setup guide for installing Exomem and importing exports."
+        "release_notes": "First release. ChatGPT can search your self-hosted Exomem archive of messages, notes and voice memos by meaning, person, source or date; open any record with the conversation around it; follow links between notes; look up the people in it; and browse sources and collections. Answers come with dated excerpts and source links."
       }
     }
   }

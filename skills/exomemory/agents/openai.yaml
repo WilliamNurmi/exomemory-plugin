@@ -2,6 +2,6 @@ dependencies:
   tools:
     - type: "mcp"
       value: "exomemory"
-      description: "Search and read the user's self-hosted Exomem memory archive through exomem.io."
+      description: "Search and read the user's messages, notes and voice memos in their self-hosted Exomem, through exomem.io."
       transport: "streamable_http"
       url: "https://mcp.exomem.io/mcp"

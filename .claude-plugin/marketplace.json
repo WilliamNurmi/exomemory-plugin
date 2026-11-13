@@ -5,14 +5,14 @@
     "email": "hello@exomem.io"
   },
   "metadata": {
-    "description": "The Exomemory plugin: search your own self-hosted Exomem memory archive."
+    "description": "Let your assistant draw on your messages, notes and voice memos, kept on your own computer."
   },
   "plugins": [
     {
       "name": "exomemory",
       "source": "./",
-      "description": "Search your own memory archive of chats, notes and voice memos, kept on your computer and reached through exomem.io.",
-      "version": "0.1.4"
+      "description": "Let your assistant draw on your messages, notes and voice memos across platforms: past decisions, recommendations and ideas, with dated excerpts and source links.",
+      "version": "0.1.5"
     }
   ]
 }

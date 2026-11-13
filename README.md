@@ -1,9 +1,18 @@
 # Exomemory plugin
 
-Exomemory lets ChatGPT, Codex, Claude and Claude Code search your own memory
-archive: chat histories, notes and voice-memo transcripts that you export from
-the services you use and import into Exomem on your own computer. Answers come
-with dated excerpts and links to the original records.
+Exomemory lets ChatGPT, Claude, Codex and Claude Code draw on your life context
+and history: past messages, ideas and decisions from your WhatsApp, Messenger,
+iMessage and Telegram chats, your Obsidian, Notion and Apple Notes, and your
+voice memos. With that background your assistant can brief you before a
+meeting, build a timeline of how something came about, or find who recommended
+what and when, with dated excerpts and links to the original records. Your
+archive runs on your own computer.
+
+Things to ask:
+
+- "I'm planning the Porto trip with Maya. Brief me on what we've agreed so far."
+- "Build a timeline of the key decisions on Project Kestrel, with links to the original notes."
+- "Find the voice memo where I explained why I changed my sourdough recipe."
 
 This repository is generated from the Exomem source repository
 (`plugins/` there, `pnpm plugins:package`); edit it there, not here.

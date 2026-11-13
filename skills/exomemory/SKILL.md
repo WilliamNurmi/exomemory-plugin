@@ -1,6 +1,6 @@
 ---
 name: exomemory
-description: Search and read the user's own Exomem memory archive (their chats, notes and voice memos) with the Exomem tools. Use when the user asks about something they said, wrote, planned or discussed before, wants dated evidence from their own records, or asks what their Exomem contains.
+description: Search and read the user's Exomemory, an archive of their messages, notes and voice memos across platforms. Use when your task could benefit from the user's recent or older records, such as finding an old message or note, recalling a recommendation, resolving who said what and when, checking what was agreed and why, tracing a decision over time, building a timeline, briefing them before a meeting or trip, or finding a voice memo by topic. Also use to browse the archive or check its sources and date coverage. Return dated excerpts and source links.
 ---
 
 # Exomem
@@ -14,6 +14,15 @@ If the user has not set up their own Exomem yet, the tools answer from a demo
 workspace with synthetic memories of an invented person, and every result starts
 with a demo notice. Say so plainly, never present demo memories as the user's
 own, and point to https://exomem.io/setup when they want their own data.
+
+## When to use it
+
+Reach for Exomem whenever a request touches the user's own life: their people,
+projects, plans, purchases, past conversations or earlier thinking, even when
+they do not mention the archive. Check `capabilities` once to see which sources
+and dates exist, and search only if one of them could hold the answer. Leave it
+out for general knowledge and live information such as weather, news or prices,
+and say when an answer drew on the archive.
 
 ## Workflow
 
