@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "exomemory",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Let your assistant draw on your messages, notes and voice memos across platforms: past decisions, recommendations and ideas, with dated excerpts and source links.",
   "author": {
     "name": "Gevolut Oy"

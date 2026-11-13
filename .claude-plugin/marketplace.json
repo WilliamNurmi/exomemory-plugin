@@ -12,7 +12,7 @@
       "name": "exomemory",
       "source": "./",
       "description": "Let your assistant draw on your messages, notes and voice memos across platforms: past decisions, recommendations and ideas, with dated excerpts and source links.",
-      "version": "0.1.5"
+      "version": "0.1.6"
     }
   ]
 }

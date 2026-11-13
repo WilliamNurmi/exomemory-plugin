@@ -76,5 +76,5 @@ and say when an answer drew on the archive.
 - When an Exomem tool misbehaves (an error, an obviously wrong result, a missing
   capability), you may record one line with `log_feedback`: the kind (bug,
   friction, gap, idea or win), the tool or area, and what happened. exomem.io
-  keeps the note. Use only made-up examples or limited details the user has
+  keeps the note. Redact it or include only limited details the user has
   agreed to share, and tell the user you sent it.

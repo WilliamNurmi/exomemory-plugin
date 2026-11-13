@@ -44,9 +44,9 @@ This repository is generated from the Exomem source repository
   paired device and 30 days of outcome logs (tool name, status, duration).
   Without a paired computer you get the demo workspace.
 - **`log_feedback`** sends a one-line note about the Exomem service itself to
-  exomem.io, which keeps it to improve Exomem (for up to two years, detached from
-  your account if you delete it). A note may contain only made-up examples or
-  limited details you have agreed to share.
+  exomem.io, which keeps it to improve Exomem (detached from your account if you
+  delete it). A note must be redacted or contain only limited details you have
+  agreed to share.
 - **The setup skill** runs commands on your computer only in assistants that can
   (Claude Code, Codex), and only after you approve each one: it clones the
   Exomem repository from GitHub, installs its dependencies, starts a local
